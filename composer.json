@@ -1,0 +1,15 @@
+{
+    "name": "administrator/mvc-codeholic",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "m7-malmir",
+            "email": "m.malmir666@gmail.com"
+        }
+    ],
+    "require": {}
+}
