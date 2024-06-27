@@ -1,7 +1,8 @@
 <?php
-namespace app\core;
 
-use Requset;
+namespace app\core;
+use app\core\Requset;
+use app\core\Router;
 class Application{
     public Router $router;
     public Requset $request;
