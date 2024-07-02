@@ -14,6 +14,10 @@ class Router{
      }
 
      public function resolve(){
-        $this->request->getPath();
+       $path= $this->request->getPath();
+       echo '<pre>';
+       var_dump($path);
+       echo '<pre>';
+       exit;
      }
 }
