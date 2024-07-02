@@ -12,6 +12,6 @@ class Application{
         $this->router=new Router($this->request);
     }
     public function run(){
-        $this->router->resolve();
+       echo $this->router->resolve();
     }
 }
