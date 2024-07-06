@@ -5,6 +5,7 @@ use app\core\Requset;
 
 class Router{
     public Requset $request;
+    public Response $response;
     protected array $routes=[];
     public function __construct($request){
       $this->request=$request;
@@ -17,6 +18,7 @@ class Router{
        $method=$this->request->getMethod();
       $callback=$this->routes[$method][$path] ?? false;
       if($callback===false){
+        Application::$app->response->setStatusCode(404);
         return 'not found';
       }
       if(is_string($callback)){
