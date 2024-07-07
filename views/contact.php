@@ -1,4 +1,4 @@
-<form>
+<form action="" method="post">
   <div class="mb-3">
     <label  class="form-label">sunbject</label>
     <input type="text" name="subject" class="form-control"  >
