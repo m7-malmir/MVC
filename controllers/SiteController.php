@@ -1,8 +1,10 @@
 <?php
 namespace app\controllers;
-
 class SiteController{
-    public function handleContent(){
+    public function contact(){
+        return 'contact form ';
+    }
+    public function handleContact(){
         return 'handling submiting data';
     }
 }
