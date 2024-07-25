@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+//         function gfg_check_duplicates() {
+//     let myarray = [];
+//     for (i = 0; i < 5; i++) {
+//            $("#status" + i).html("");
+//            myarray[i] =$("#gfg_field" + i).val();
+//     }
+//      for (i = 0; i < 5; i++) {
+//         let flag = false;
+//         for (j = 0; j < 5; j++) {
+//             if (i == j || myarray[i] == "" || myarray[j] == "")
+//                 continue;
+//             if (myarray[i] == myarray[j]) {
+//                  flag = true;
+//             $("#status" + i).html("<br>Its identical to the phone number " + (j + 1));
+//         }
+//     }
+//         if (flag == false)
+//             $("#status" + i).html("");
+//     }
+// }
+
+
+//last adel
+$("#Req_Info").click(function () {
+  var row_count = $("#Req_Info").getNumberRows();
+  var arr = [];
+  for (var i = 1; i <= row_count; i++) {
+    arr.push($("#Req_Info").getValue(i, 1));
+  }
+
+  debugger;
+  var last_val = arr[arr.length - 1];
+  // var last_index = arr.findIndex(arr.length -1);
+  debugger;
+
+  var rs = arr[arr.indexOf(last_val)];
+  var rs_key = arr.indexOf(last_val);
+  debugger;
+
+  // console.log("array:" + arr);
+  // console.log("index:" + rs);
+  // // console.log("value:"+last_val);
+
+  for (var j = 0; j <= rs_key-1 ; j++) {
+    debugger;
+
+      if (arr.includes(rs==last_val))
+        {
+            alert();
+        }
+    // console.log("find: ", arr.includes(arr[j]));
+    debugger;
+  }
+});
+
+//last adel
+    </script>
+    <title>433</title>
+</head>
+<body>
+    <label>Phone no. 1</label>
+    <input id="gfg_field0"
+           oninput="gfg_check_duplicates()" />
+    <div id="status0"></div>
+
+    <label>Phone no. 2</label>
+    <input id="gfg_field1"
+           oninput="gfg_check_duplicates()" />
+    <div id="status1"></div>
+
+    <label>Phone no. 3</label>
+    <input id="gfg_field2"
+           oninput="gfg_check_duplicates()" />
+    <div id="status2"></div>
+
+    <label>Phone no. 4</label>
+    <input id="gfg_field3"
+           oninput="gfg_check_duplicates()" />
+    <div id="status3"></div>
+
+    <label>Phone no. 5</label>
+    <input id="gfg_field4"
+           oninput="gfg_check_duplicates()" />
+    <div id="status4"></div>
+
+</body>
+</html>
+
+<script>
+        function gfg_check_duplicates() {
+    let myarray = [];
+    for (i = 0; i < 5; i++) {
+           $("#status" + i).html("");
+           myarray[i] =$("#gfg_field" + i).val();
+    }
+     for (i = 0; i < 5; i++) {
+        let flag = false;
+        for (j = 0; j < 5; j++) {
+            if (i == j || myarray[i] == "" || myarray[j] == "")
+                continue;
+            if (myarray[i] == myarray[j]) {
+                 flag = true;
+            $("#status" + i).html("<br>Its identical to the phone number " + (j + 1));
+        }
+    }
+        if (flag == false)
+            $("#status" + i).html("");
+    }
+}
+
+</script>
