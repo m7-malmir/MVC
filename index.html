@@ -94,15 +94,17 @@ $("#Req_Info").click(function () {
 </html>
 #Req_Info-body .col-sm-12 input[id='form[Req_Info][3][Personal_Code]']
 <script>
+
+
+
+
 $("#Req_Info").on("click", function () {
 //function gfg_check_duplicates() {
     let myarray = [];
     let row_count = $("#Req_Info").getNumberRows();
     for (let i = 1; i <= row_count; i++) {
-
            myarray[i] =$("#Req_Info-body .col-sm-12 input[id='form[Req_Info]["+i+"][Personal_Code]']").val();
     }
-
      for (var a = 0; a < myarray.length; a++) {
         let flag = false;
         for (var b = a + 1; b < myarray.length; b++) {
@@ -110,7 +112,7 @@ $("#Req_Info").on("click", function () {
                 continue;
             if (myarray[a] == myarray[b]) {
                  flag = true;
-                 alert();
+                //  alert();
                  $("#Req_Info-body .col-sm-12 input[id='form[Req_Info]["+i+"][Personal_Code]']").css("background-color", "#e5383b");
             // $("#Req_Info").getControl(a, 1).css("background-color", "#e5383b");
             // $("#Req_Info").getControl(b, 1).css("background-color", "#e5383b");
@@ -128,7 +130,6 @@ $("#Req_Info").on("click", function () {
         // $("#Req_Info").find("button").prop("disabled", false);
     }
 //}
-
 });
 
 
