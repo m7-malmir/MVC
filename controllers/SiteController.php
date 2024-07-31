@@ -1,10 +1,14 @@
 <?php
 namespace app\controllers;
+
+use app\core\Router;
+
 class SiteController{
-    public function contact(){
-        return 'contact form ';
+    public static function contact(){
+       // Router->resolve();
+       return 'CONTACT';
     }
-    public function handleContact(){
+    public static function handleContact(){
         return 'handling submiting data';
     }
 }
