@@ -9,9 +9,4 @@ $app->router->get('/','home');
 $app->router->get('/contact',[SiteController::class,'contact']);
 $app->router->post('/contact',[SiteController::class,'handleContact']);
 
-//$app->router->get('/contact','contact');
-// $app->router->post('/contact',function(){
-
-//     return 'handling submitted data';
-// });
 $app->run();
