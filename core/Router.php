@@ -43,10 +43,13 @@ class Router{
       return ob_get_clean();
     }
     protected function renderOnlyView($view,$params){
-      echo '<pre>';
-      var_dump($params);
-      echo '</pre>';
-      exit;
+      foreach ($params as $key => $value) {
+        $$key=$value;
+     }
+      // echo '<pre>';
+      // var_dump($name);
+      // echo '</pre>';
+      // exit;
       ob_start();
       include_once Application::$ROOT_DIR."/views/$view.php";
       return ob_get_clean();
