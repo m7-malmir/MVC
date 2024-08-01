@@ -3,14 +3,17 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Router;
-
-class SiteController{
-    public static function contact(){
+use app\core\controller;
+class SiteController extends Controller{
+    public static function home(){
        $params=[
         'name'=>"arcturus"
        ];
-       return Application::$app->router->renderView('contact',$params);
+       return Application::$app->router->renderView('home',$params);
     }
+    public static function contact(){
+        return $this->render('contact');
+     }
     public static function handleContact(){
         return 'handling submiting data';
     }

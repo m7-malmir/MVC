@@ -26,6 +26,13 @@ class Router{
         if(is_string($callback)){
           return $this->renderView($callback);
         }
+        if(is_array($callback)){
+          $callback[0] =new $callback[0]();
+        }
+      echo '<pre>';
+      var_dump($callback);
+      echo '</pre>';
+      exit;
       return call_user_func($callback);
     }
     public function renderView($view,$params=[]) {
@@ -47,7 +54,7 @@ class Router{
         $$key=$value;
      }
       // echo '<pre>';
-      // var_dump($name);
+      // var_dump($callback);
       // echo '</pre>';
       // exit;
       ob_start();
