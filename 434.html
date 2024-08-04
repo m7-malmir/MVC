@@ -687,23 +687,23 @@
 </html>
 
 <script>
-  //let row_count = $("#group_cost_grid-body").getNumberRows();	
+// let row_count = $("#group_cost_grid-body").getNumberRows();	
 
 $("#group_cost_grid-body").click( function() {
-	//alert();
+// alert();
 //     for (var i = 1; i < 3; i++) {
 //          myarray[i] =$("#group_cost_grid-body input[id='form[Req_Info]["+i+"][Personal_Code]']").val(); 
-//   }
-	//let myarray = [];
+//     }
+// let myarray = [];
   for (var i = 0; i < 5; i++) {
 	 myarray =$("#group_cost_grid-body input[id='form[group_cost_grid]["+i+"][g2_shaba_number]']").val(); 
 	 $("#group_cost_grid-body select[id='form[group_cost_grid]["+i+"][g2_banks_list]']").val(myarray); 
   }
 
 //    for (var i = 0; i < 3; i++){
-// 	$("#group_cost_grid-body select[id='form[group_cost_grid]["+i+"][g2_banks_list]']").val(myarray);
+// 	   $("#group_cost_grid-body select[id='form[group_cost_grid]["+i+"][g2_banks_list]']").val(myarray);
 	
-//   }
+//    }
 
 
 });

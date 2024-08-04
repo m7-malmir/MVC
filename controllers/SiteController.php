@@ -9,11 +9,11 @@ class SiteController extends Controller{
        $params=[
         'name'=>"arcturus"
        ];
-       return Application::$app->router->renderView('home',$params);
+       return $this->render('home',$params);
     }
     public static function contact(){
-        return $this->render('contact');
-     }
+       return $this->render('contact');
+    }
     public static function handleContact(){
         return 'handling submiting data';
     }

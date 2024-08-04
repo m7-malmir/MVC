@@ -4,6 +4,7 @@ namespace app\core;
 use app\core\Requset;
 use app\core\Router;
 use app\core\Response;
+//use app\core\Controller;
 
 class Application{
     public static string $ROOT_DIR;
