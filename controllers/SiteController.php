@@ -19,7 +19,7 @@ class SiteController extends Controller{
        //return Application::$app->router->renderView('contact');
     }
     public function handleContact(Requset $requset){
-       $body = $request->getBody();
+       $body = $requset->getBody();
       echo '<pre>';
       var_dump($body);
       echo '</pre>';
