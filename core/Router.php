@@ -29,7 +29,7 @@ class Router{
         if(is_array($callback)){
           $callback[0] =new $callback[0]();
         }
-   
+ 
       return call_user_func($callback);
     }
     public function renderView($view,$params=[]) {
@@ -50,10 +50,6 @@ class Router{
       foreach ($params as $key => $value) {
         $$key=$value;
      }
-      // echo '<pre>';
-      // var_dump($callback);
-      // echo '</pre>';
-      // exit;
       ob_start();
       include_once Application::$ROOT_DIR."/views/$view.php";
       return ob_get_clean();

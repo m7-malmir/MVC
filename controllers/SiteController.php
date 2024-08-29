@@ -5,16 +5,18 @@ use app\core\Application;
 use app\core\Router;
 use app\core\controller;
 class SiteController extends Controller{
-    public static function home(){
+    public  function home(){
        $params=[
         'name'=>"arcturus"
        ];
        return $this->render('home',$params);
+       //return Application::$app->router->renderView('home',$params);
     }
-    public static function contact(){
+    public  function contact(){
        return $this->render('contact');
+       //return Application::$app->router->renderView('contact');
     }
-    public static function handleContact(){
+    public function handleContact(){
         return 'handling submiting data';
     }
 }

@@ -11,7 +11,7 @@ class Application{
     public Router $router;
     public Requset $request;
     public Response $response;
-    public static Application $app;
+    public static Application $app; 
     public function __construct($rootPath){
         self::$ROOT_DIR=$rootPath;
         self::$app=$this;
