@@ -4,6 +4,8 @@ namespace app\controllers;
 use app\core\Application;
 use app\core\Router;
 use app\core\controller;
+use app\core\Requset;
+
 class SiteController extends Controller{
     public  function home(){
        $params=[
@@ -16,7 +18,12 @@ class SiteController extends Controller{
        return $this->render('contact');
        //return Application::$app->router->renderView('contact');
     }
-    public function handleContact(){
-        return 'handling submiting data';
+    public function handleContact(Requset $requset){
+       $body = $request->getBody();
+      echo '<pre>';
+      var_dump($body);
+      echo '</pre>';
+      exit;
+      return 'handling submiting data';
     }
 }
