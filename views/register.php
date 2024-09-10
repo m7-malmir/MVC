@@ -4,7 +4,7 @@
     <div class="col">
     <div class="mb-3">
       <label  class="form-label">first name</label>
-      <input type="text" name="fisrtname" class="form-control"  >
+      <input type="text" name="firstname" class="form-control"  >
   </div>
     </div>
     <div class="col">
