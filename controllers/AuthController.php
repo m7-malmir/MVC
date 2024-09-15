@@ -13,13 +13,14 @@ class AuthController extends Controller{
         if ($requset->isPost()) {
             
            $registerModel->loadData($requset->getBody());
-           echo '<pre>';
-           var_dump($registerModel);
-           echo '</pre>';
-           exit;
+     
            if ($registerModel->validate() && $requset->register()) {
                 return 'Success';
            }
+           echo '<pre>';
+           var_dump($registerModel->errors);
+           echo '</pre>';
+           exit;
            return $this->render('register',[
             'model'=>$registerModel
            ]);
