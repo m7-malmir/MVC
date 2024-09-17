@@ -11,16 +11,11 @@ class AuthController extends Controller{
     public function register(Requset $requset){
         $registerModel=new RegisterModel();
         if ($requset->isPost()) {
-            
            $registerModel->loadData($requset->getBody());
      
-           if ($registerModel->validate() && $requset->register()) {
+           if ($registerModel->validate() && $registerModel->register()) {
                 return 'Success';
            }
-           echo '<pre>';
-           var_dump($registerModel->errors);
-           echo '</pre>';
-           exit;
            return $this->render('register',[
             'model'=>$registerModel
            ]);

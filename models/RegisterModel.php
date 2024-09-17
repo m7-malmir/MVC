@@ -8,7 +8,7 @@ class RegisterModel extends Model{
     public string $email;
     public string $password;
     public string $confirmpassword;
-    public function register($data){
+    public function register(){
         echo 'creating new user';
     }
     public function rules(): array{

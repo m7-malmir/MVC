@@ -3,8 +3,12 @@
   <div class="row">
     <div class="col">
     <div class="mb-3">
-      <label  class="form-label">first name</label>
-      <input type="text" name="firstname" class="form-control"  >
+      <label class="form-label">Firstname</label>
+      <input type="text" name="firstname" value="<?php echo $model->firstname ?>" 
+      class="form-control<?php echo $model->hasError('firstname') ? ' is-invalid' : ''?>">
+      <div class="invalid-feedback">
+        <?php echo $model->getFirstError('firstname') ?>
+      </div>
   </div>
     </div>
     <div class="col">
