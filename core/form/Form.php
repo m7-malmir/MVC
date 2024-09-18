@@ -8,7 +8,9 @@ class Form{
         return new Form();
     }
     public static function end(){
-        return '</form>';
+        echo '</form>';
     }
-    public function field(Model $model,$attribute)
+    public function field(Model $model,$attribute){
+        return new Field($model,$attribute);
+    }
 }
