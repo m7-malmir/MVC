@@ -17,7 +17,7 @@ class RegisterModel extends Model{
             'lastname' => [self::RULE_REQUIRED],
             'email' => [self::RULE_REQUIRED,self::RULE_EMAIL],
             'password' => [self::RULE_REQUIRED, [self::RULE_MIN,'min'=>8], [self::RULE_MAX,'max'=>24]],
-            'confirmpassword' => [self::RULE_REQUIRED,[self::RULE_MATCH, 'match'=>'password']]
+            'confirmpassword' => [self::RULE_REQUIRED,[self::RULE_MATCH, 'match'=>'password']],
         ];
     }
 

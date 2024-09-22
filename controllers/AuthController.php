@@ -20,6 +20,7 @@ class AuthController extends Controller{
             'model'=>$registerModel
            ]);
         }
+  
         $this->setLayout('auth');
         return $this->render('register',[
             'model'=>$registerModel
