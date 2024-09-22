@@ -4,6 +4,8 @@ namespace app\core;
 use app\core\Requset;
 use app\core\Router;
 use app\core\Response;
+use Database;
+
 //use app\core\Controller;
 
 class Application{
@@ -11,6 +13,7 @@ class Application{
     public Router $router;
     public Requset $request;
     public Response $response;
+    public Database $db;
     public static Application $app; 
     public Controller $controller;
     public function __construct($rootPath){
@@ -19,6 +22,8 @@ class Application{
         $this->request=new Requset();
         $this->response=new Response();
         $this->router=new Router($this->request, $this->response);
+
+        $this->db=new Database();
     }
     public function run(){
        echo $this->router->resolve();
