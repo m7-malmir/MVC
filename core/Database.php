@@ -10,4 +10,14 @@ class Database{
         $this->pdo=new \PDO($dsn,$user,$password);
         $this->pdo->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
     }
+    public function applyMigrations(){
+
+    }
+    public function createMigrationsTable(){
+        $this->pdo->exec("CREATE TABLE IF NOT EXISTS migrations(
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            migration VARCHAR(255),
+            create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ) ENGINE=INNODB;");
+    }
 }
