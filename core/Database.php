@@ -1,5 +1,7 @@
 <?php
 namespace app\core;
+use app\migrations\M0001_initial;
+use app\migrations\M0002_something;
 use FTP\Connection;
 class Database{
     public \PDO $pdo;
@@ -12,13 +14,29 @@ class Database{
     }
     public function applyMigrations(){
         $this->createMigrationsTable();
-        $this->getAppliedMigration();
-
+        $appliedMigrations = $this->getAppliedMigration(); 
+    
         $files=scandir(Application::$ROOT_DIR.'/migrations');
+
+       $toApplyMigrations=array_diff($files,$appliedMigrations);
+       
+       foreach ($toApplyMigrations as $migration) {
+        if ($migration==='.' || $migration === '..') {
+            continue;
+        }
+        require_once Application::$ROOT_DIR.'/migrations/'.$migration;
+        $className=pathinfo($migration, PATHINFO_FILENAME);
+
+        $instance =new $className;
+        $instance->up();
         echo '<pre>';
-        var_dump($files);
+        var_dump($instance);
         echo '</pre>';
-        exit;
+        //exit;
+        //
+       
+     
+       }
     }
     public function createMigrationsTable(){
         $this->pdo->exec("CREATE TABLE IF NOT EXISTS migrations(

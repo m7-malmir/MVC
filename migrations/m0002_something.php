@@ -1,4 +1,5 @@
 <?php
+namespace app\migrations;
 class M0002_something{
     public function up(){
         echo 'applying migration';
